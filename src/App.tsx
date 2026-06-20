@@ -13,7 +13,7 @@ import { COLORS, FONTS } from "./constants/theme";
 
 function Home() {
   return (
-    <div style={{ backgroundColor: COLORS.onyx }}>
+    <div className="bg-[#0B0B0B]">
       <HeroSection />
       <CollectionSection />
       <OurStorySection />
@@ -25,14 +25,7 @@ function Home() {
 export default function App() {
   return (
     <BrowserRouter>
-      <div
-        style={{
-          backgroundColor: COLORS.onyx,
-          fontFamily: FONTS.body,
-          minHeight: "100vh",
-          color: COLORS.ivory,
-        }}
-      >
+      <div className="min-h-screen bg-[#0B0B0B] text-[#F4EADE] font-body">
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
