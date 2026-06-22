@@ -116,7 +116,7 @@ export default function PersonalServiceSection() {
         {/* WhatsApp button */}
         <motion.a
           href={WA_LINK(
-            "Hi, I'd like help finding my signature scent from Scents of Omark",
+            "Hi, I'd like help finding my signature scent from Trademark Aroma",
           )}
           target="_blank"
           rel="noopener noreferrer"
