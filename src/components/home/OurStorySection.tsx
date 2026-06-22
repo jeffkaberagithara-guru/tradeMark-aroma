@@ -30,8 +30,8 @@ export default function OurStorySection() {
           }}
         >
           <motion.img
-            src="https://images.unsplash.com/photo-1590156562745-5dd5f237bd7c?w=800&q=85"
-            alt="Scents of Omark story"
+            src="https://images.pexels.com/photos/14490634/pexels-photo-14490634.jpeg?auto=compress&cs=tinysrgb&w=1200"
+            alt="TradeMark Aroma story"
             whileHover={{ scale: 1.04 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             style={{
@@ -161,7 +161,7 @@ export default function OurStorySection() {
             margin: 0,
           }}
         >
-          Scents of Omark was born from a single belief — that the right
+          Trademark Aroma was born from a single belief — that the right
           fragrance does not just smell good, it changes how you carry yourself.
           It is the last thing you put on and the first thing people remember.
         </p>
