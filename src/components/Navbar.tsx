@@ -54,7 +54,7 @@ export default function Navbar() {
             className="flex flex-col items-start gap-0.75 text-[#C9A94A] uppercase leading-[1.05]"
           >
             <span className="text-[15px] font-bold tracking-[0.16em] font-body">
-              Trademark Aroma
+              TradeMark Aroma
             </span>
             <span className="text-[10px] font-medium tracking-[0.18em] text-[#B79C50] font-body">
               Scent That Defines You
