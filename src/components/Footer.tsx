@@ -14,7 +14,7 @@ export default function Footer() {
       <div className="max-w-[1200px] mx-auto flex flex-col gap-10 lg:flex-row lg:justify-between lg:items-start">
         <div className="flex-1 min-w-0">
           <div className="text-[14px] font-semibold uppercase tracking-[0.22em] text-[#C9A94A] mb-4">
-            Trademark Aroma
+            TradeMark Aroma
           </div>
           <h2 className="text-[clamp(40px,4vw,52px)] font-heading font-bold leading-[1.1] text-[#F4EADE] mb-5">
             A fragrance experience that lingers long after the moment.
