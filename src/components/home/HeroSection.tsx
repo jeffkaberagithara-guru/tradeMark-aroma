@@ -5,33 +5,16 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      style={{
-        position: "relative",
-        minHeight: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        textAlign: "center",
-        overflow: "hidden",
-        width: "100%",
-      }}
+      className="relative w-full overflow-hidden"
+      style={{ height: "100vh", minHeight: "650px", maxHeight: "920px" }}
     >
-      {/* Video — explicit style zIndex for guaranteed cross-browser layering */}
+      {/* Video Background */}
       <video
         autoPlay
         muted
         loop
         playsInline
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          zIndex: 0,
-        }}
+        className="absolute top-0 left-0 w-full h-full object-cover z-0"
       >
         <source
           src="https://videos.pexels.com/video-files/7034150/7034150-uhd_2560_1440_25fps.mp4"
@@ -43,224 +26,102 @@ export default function HeroSection() {
         />
       </video>
 
-      {/* Gradient overlay — zIndex 1 */}
+      {/* Gradient Overlay */}
+      <div className="absolute top-0 left-0 w-full h-full z-1 bg-gradient-to-b from-[rgba(11,11,11,0.2)] via-[rgba(11,11,11,0.4)] via-40% via-[rgba(11,11,11,0.85)] via-75% to-[rgba(11,11,11,1)]" />
+
+      {/* Radial Vignette */}
       <div
+        className="absolute top-0 left-0 w-full h-full z-1"
         style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          zIndex: 1,
           background:
-            "linear-gradient(to bottom, rgba(11,11,11,0.3) 0%, rgba(11,11,11,0.5) 45%, rgba(11,11,11,0.9) 80%, rgba(11,11,11,1) 100%)",
+            "radial-gradient(ellipse at center, transparent 40%, rgba(11,11,11,0.5) 100%)",
         }}
       />
 
-      {/* Radial vignette — zIndex 1 */}
-      <div
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          zIndex: 1,
-          background:
-            "radial-gradient(ellipse at center, transparent 38%, rgba(11,11,11,0.62) 100%)",
-        }}
-      />
-
-      {/* Content — zIndex 2 */}
-      <div
-        style={{
-          position: "relative",
-          zIndex: 2,
-          width: "100%",
-          maxWidth: "900px",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          padding:
-            "clamp(100px, 14vw, 160px) clamp(16px, 5vw, 48px) clamp(120px, 16vw, 180px)",
-        }}
-      >
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          style={{
-            fontFamily: "'Jost', sans-serif",
-            fontSize: "clamp(10px, 2vw, 13px)",
-            fontWeight: 600,
-            letterSpacing: "0.24em",
-            textTransform: "uppercase",
-            color: "#6B5A2E",
-            margin: "0 0 clamp(16px, 3vw, 28px) 0",
-          }}
-        >
-          Luxury Fragrances · Nairobi, Kenya
-        </motion.p>
-
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, delay: 0.35 }}
-          style={{
-            fontFamily: "'Cormorant Garamond', Georgia, serif",
-            fontSize: "clamp(38px, 8vw, 104px)",
-            fontWeight: 600,
-            lineHeight: 1.05,
-            letterSpacing: "0.02em",
-            color: "#FFFFFF",
-            margin: "0 0 clamp(16px, 3vw, 32px) 0",
-            textShadow: "0 4px 40px rgba(0,0,0,0.5)",
-          }}
-        >
-          Wear a scent that{" "}
-          <span style={{ color: "#C9A94A", fontStyle: "italic" }}>
-            tells your story.
-          </span>
-        </motion.h1>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          style={{
-            fontFamily: "'Jost', sans-serif",
-            fontSize: "clamp(15px, 2vw, 20px)",
-            lineHeight: 1.8,
-            color: "#DDDDDD",
-            maxWidth: "560px",
-            margin: "0 0 clamp(32px, 5vw, 52px) 0",
-            textShadow: "0 2px 16px rgba(0,0,0,0.5)",
-          }}
-        >
-          Handpicked perfumes and colognes for the man and woman who understand
-          that fragrance is the invisible, unforgettable part of their presence.
-        </motion.p>
-
-        {/* Buttons — column on mobile, row on sm+ */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.65 }}
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "12px",
-            width: "100%",
-            maxWidth: "380px",
-            alignItems: "stretch",
-          }}
-          className="sm:flex-row sm:max-w-none sm:w-auto sm:items-center sm:justify-center"
-        >
-          <motion.a
-            href="/fragrances"
-            whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.97 }}
-            style={{
-              textDecoration: "none",
-              fontFamily: "'Jost', sans-serif",
-              fontSize: "clamp(12px, 1.5vw, 14px)",
-              fontWeight: 600,
-              letterSpacing: "0.12em",
-              textTransform: "uppercase",
-              color: "#0B0B0B",
-              backgroundColor: "#C9A94A",
-              padding: "clamp(13px, 2vw, 16px) clamp(24px, 4vw, 36px)",
-              borderRadius: "32px",
-              textAlign: "center",
-              display: "block",
-            }}
-            className="sm:inline-block"
+      {/* Content - Centered with flex */}
+      <div className="relative z-2 w-full h-full flex flex-col items-center justify-center px-4 sm:px-6">
+        <div className="w-full max-w-[850px] flex flex-col items-center text-center">
+          {/* Top Label */}
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="font-body text-[11px] sm:text-[12px] md:text-[13px] font-semibold tracking-[0.22em] uppercase text-[#6B5A2E] mb-3 sm:mb-4"
           >
-            Explore Fragrances
-          </motion.a>
+            Luxury Fragrances · Nairobi, Kenya
+          </motion.p>
 
-          <motion.a
-            href={WA_LINK(
-              "Hi, I'd like to order a fragrance from Trademark Aroma",
-            )}
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.97 }}
-            style={{
-              textDecoration: "none",
-              fontFamily: "'Jost', sans-serif",
-              fontSize: "clamp(12px, 1.5vw, 14px)",
-              fontWeight: 600,
-              letterSpacing: "0.12em",
-              textTransform: "uppercase",
-              color: "#C9A94A",
-              backgroundColor: "transparent",
-              padding: "clamp(13px, 2vw, 16px) clamp(24px, 4vw, 36px)",
-              borderRadius: "32px",
-              border: "1px solid #C9A94A",
-              textAlign: "center",
-              display: "block",
-            }}
-            className="sm:inline-block"
+          {/* Main Heading */}
+          <motion.h1
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.35 }}
+            className="font-heading text-[clamp(36px,7vw,80px)] font-semibold leading-[1.05] tracking-[0.02em] text-white mb-3 sm:mb-4"
+            style={{ textShadow: "0 4px 30px rgba(0,0,0,0.4)" }}
           >
-            Order on WhatsApp
-          </motion.a>
-        </motion.div>
+            Wear a scent that{" "}
+            <span className="text-[#C9A94A] italic">tells your story.</span>
+          </motion.h1>
+
+          {/* Description */}
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="font-body text-[clamp(14px,1.6vw,18px)] leading-[1.7] text-[#DDDDDD] max-w-[540px] mb-5 sm:mb-6 px-2"
+            style={{ textShadow: "0 2px 12px rgba(0,0,0,0.4)" }}
+          >
+            Handpicked perfumes and colognes for those who understand that
+            fragrance is the invisible, unforgettable part of their presence.
+          </motion.p>
+
+          {/* CTA Buttons - Side by side */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.65 }}
+            className="flex flex-col sm:flex-row gap-3.5 sm:gap-5 w-full sm:w-auto items-center justify-center"
+          >
+            <motion.a
+              href="/fragrances"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.97 }}
+              className="w-full sm:w-auto text-center font-body text-[clamp(12px,1.3vw,14px)] font-semibold tracking-[0.12em] uppercase text-[#0B0B0B] bg-[#C9A94A] px-7 sm:px-10 py-3 sm:py-3.5 rounded-[30px] no-underline transition-all hover:shadow-[0_4px_25px_rgba(201,169,74,0.35)]"
+            >
+              Explore Fragrances
+            </motion.a>
+
+            <motion.a
+              href={WA_LINK(
+                "Hi, I'd like to order a fragrance from Trademark Aroma",
+              )}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.97 }}
+              className="w-full sm:w-auto text-center font-body text-[clamp(12px,1.3vw,14px)] font-semibold tracking-[0.12em] uppercase text-[#C9A94A] bg-transparent border-2 border-[#C9A94A] px-7 sm:px-10 py-3 sm:py-3.5 rounded-[30px] no-underline transition-all hover:bg-[#C9A94A]/10"
+            >
+              Order on WhatsApp
+            </motion.a>
+          </motion.div>
+        </div>
       </div>
 
-      {/* Scroll indicator — div not anchor, pointerEvents none = zero tap interference */}
+      {/* Scroll Indicator - Fixed at bottom */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.6, duration: 0.8 }}
-        style={{
-          position: "absolute",
-          bottom: "32px",
-          left: "50%",
-          transform: "translateX(-50%)",
-          zIndex: 2,
-          pointerEvents: "none",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          gap: "8px",
-        }}
+        transition={{ delay: 1.4, duration: 0.6 }}
+        className="absolute bottom-5 sm:bottom-7 left-1/2 transform -translate-x-1/2 z-2 flex flex-col items-center gap-1.5 pointer-events-none"
       >
-        <span
-          style={{
-            fontFamily: "'Jost', sans-serif",
-            fontSize: "11px",
-            fontWeight: 500,
-            letterSpacing: "0.2em",
-            textTransform: "uppercase",
-            color: "rgba(255,255,255,0.35)",
-          }}
-        >
+        <span className="font-body text-[10px] sm:text-[11px] font-medium tracking-[0.2em] uppercase text-white/35">
           Scroll
         </span>
-        <div
-          style={{
-            width: "28px",
-            height: "28px",
-            borderRadius: "50%",
-            border: "1px solid rgba(255,255,255,0.25)",
-            backgroundColor: "rgba(11,11,11,0.3)",
-            display: "flex",
-            alignItems: "flex-start",
-            justifyContent: "center",
-            paddingTop: "5px",
-          }}
-        >
+        <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full border border-white/25 bg-black/25 flex items-start justify-center pt-1.5 sm:pt-1.5">
           <motion.div
             animate={{ y: [0, 7, 0] }}
             transition={{ repeat: Infinity, duration: 1.6, ease: "easeInOut" }}
-            style={{
-              width: "6px",
-              height: "6px",
-              borderRadius: "50%",
-              backgroundColor: "#C9A94A",
-            }}
+            className="w-1.5 h-1.5 rounded-full bg-[#C9A94A]"
           />
         </div>
       </motion.div>
