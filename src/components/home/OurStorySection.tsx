@@ -1,5 +1,6 @@
 import { COLORS, FONTS } from "../../constants/theme";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const stats = [
   { number: "100+", label: "Fragrances" },
@@ -8,6 +9,8 @@ const stats = [
 ];
 
 export default function OurStorySection() {
+  const [videoError, setVideoError] = useState(false);
+
   return (
     <section
       className="w-full max-w-[1200px] mx-auto"
@@ -17,7 +20,7 @@ export default function OurStorySection() {
         className="grid grid-cols-1 lg:grid-cols-2 items-center"
         style={{ gap: "clamp(48px, 7vw, 80px)" }}
       >
-        {/* Left — image block. Extra padding creates safe space for floating card */}
+        {/* Left — Video Block */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -30,29 +33,77 @@ export default function OurStorySection() {
           }}
           className="pl-4 lg:pl-0"
         >
-          {/* Main image */}
+          {/* Video Container */}
           <div
             style={{
               borderRadius: "16px",
               overflow: "hidden",
               height: "clamp(280px, 48vw, 560px)",
+              position: "relative",
+              backgroundColor: COLORS.onyx,
             }}
           >
-            <motion.img
-              src="https://images.pexels.com/photos/14490634/pexels-photo-14490634.jpeg?auto=compress&cs=tinysrgb&w=1200"
-              alt="Trademark Aroma story"
-              whileHover={{ scale: 1.04 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+            {/* Background Video */}
+            {!videoError ? (
+              <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  display: "block",
+                }}
+                onError={() => {
+                  console.error("Video failed to load");
+                  setVideoError(true);
+                }}
+              >
+                <source
+                  src="/videos/4154241-hd_2048_1080_25fps.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            ) : (
+              /* Fallback image if video fails */
+              <img
+                src="https://images.pexels.com/photos/14490634/pexels-photo-14490634.jpeg?auto=compress&cs=tinysrgb&w=1200"
+                alt="Trademark Aroma story"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  display: "block",
+                }}
+              />
+            )}
+
+            {/* Subtle Overlay */}
+            <div
               style={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                display: "block",
+                position: "absolute",
+                inset: 0,
+                background:
+                  "linear-gradient(to bottom, rgba(11,11,11,0.1) 0%, rgba(11,11,11,0.3) 100%)",
+                pointerEvents: "none",
+              }}
+            />
+
+            {/* Decorative Gold Border Glow */}
+            <div
+              style={{
+                position: "absolute",
+                inset: 0,
+                borderRadius: "16px",
+                border: "1px solid rgba(201,169,74,0.15)",
+                pointerEvents: "none",
               }}
             />
           </div>
 
-          {/* Floating accent card — sits inside padded wrapper, never overflows viewport */}
+          {/* Floating accent card */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -71,6 +122,7 @@ export default function OurStorySection() {
               gap: "6px",
               backdropFilter: "blur(12px)",
               minWidth: "130px",
+              boxShadow: "0 8px 32px rgba(0,0,0,0.4)",
             }}
           >
             <span
@@ -98,7 +150,7 @@ export default function OurStorySection() {
             </span>
           </motion.div>
 
-          {/* Gold line — kept inside section padding, never bleeds left */}
+          {/* Gold line */}
           <motion.div
             initial={{ scaleY: 0 }}
             whileInView={{ scaleY: 1 }}
