@@ -61,29 +61,76 @@ const storySteps = [
 export default function OurStory() {
   return (
     <div className="min-h-screen bg-[#0B0B0B] text-[#F4EADE]">
-      <section className="pt-28 px-4 sm:px-6 pb-14 max-w-6xl mx-auto text-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="mx-auto max-w-3xl"
-        >
-          <p className="text-sm font-extrabold uppercase tracking-[0.28em] text-[#6B5A2E] font-body">
-            Our Story
-          </p>
-          <h1 className="mt-6 text-[clamp(42px,5vw,72px)] font-heading font-extrabold leading-[0.95] text-[#F4EADE]">
-            Where fragrance becomes a defining moment.
-          </h1>
-          <p className="mt-6 text-[18px] leading-[1.9] text-[#CCCCCC] font-body">
-            Trademark Aroma brings together thoughtful scent design and refined
-            service, crafting memorable rituals for modern luxury. Our story is
-            rooted in artistry, personal connection, and a love for scents that
-            linger long after the first encounter.
-          </p>
-        </motion.div>
+      {/* Hero Section with Video Background */}
+      <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden">
+        {/* Video Background */}
+        <div className="absolute inset-0 z-0">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover"
+            style={{
+              filter: "brightness(0.35) saturate(0.7) contrast(1.1)",
+            }}
+          >
+            <source
+              src="/videos/4154241-hd_2048_1080_25fps.mp4"
+              type="video/mp4"
+            />
+            {/* Fallback image if video doesn't load */}
+            <img
+              src="https://images.pexels.com/photos/14490634/pexels-photo-14490634.jpeg?auto=compress&cs=tinysrgb&w=1200"
+              alt="Trademark Aroma story"
+              className="w-full h-full object-cover"
+            />
+          </video>
+
+          {/* Overlay Gradients for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[rgba(11,11,11,0.2)] via-[rgba(11,11,11,0.5)] via-60% to-[rgba(11,11,11,0.95)]" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[rgba(11,11,11,0.9)] via-transparent to-[rgba(11,11,11,0.1)]" />
+
+          {/* Subtle gold accent overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[rgba(201,169,74,0.08)] to-transparent" />
+        </div>
+
+        {/* Content */}
+        <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 py-20 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="mx-auto max-w-3xl"
+          >
+            <h1 className="mt-6 text-[clamp(42px,5vw,72px)] font-heading font-extrabold leading-[0.95] text-[#F4EADE]">
+              Where fragrance becomes a{" "}
+              <span className="text-[#C9A94A]">defining moment</span>.
+            </h1>
+            <div className="mt-6 space-y-4">
+              <p className="text-[18px] leading-[1.9] text-[#DDDDDD] font-body">
+                Trademark Aroma brings together thoughtful scent design and
+                refined service, crafting memorable rituals for modern luxury.
+              </p>
+              <p className="text-[18px] leading-[1.9] text-[#DDDDDD] font-body">
+                Our story is rooted in artistry, personal connection, and a love
+                for scents that linger long after the first encounter.
+              </p>
+            </div>
+
+            {/* Decorative Line */}
+            <motion.div
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="w-20 h-0.5 bg-[#C9A94A] mx-auto mt-8"
+            />
+          </motion.div>
+        </div>
       </section>
 
-      <section className="px-4 sm:px-6 pb-16 max-w-6xl mx-auto">
+      {/* Rest of the content */}
+      <section className="px-4 sm:px-6 pb-16 max-w-6xl mx-auto -mt-8 relative z-10">
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
           <motion.div
             initial={{ opacity: 0, x: -24 }}
