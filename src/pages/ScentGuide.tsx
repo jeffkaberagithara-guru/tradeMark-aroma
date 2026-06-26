@@ -345,15 +345,7 @@ export default function ScentGuide() {
             transition={{ duration: 0.8 }}
             className="mx-auto max-w-3xl"
           >
-            <p
-              className="font-body font-extrabold uppercase text-[#C9A94A]"
-              style={{
-                fontSize: "clamp(12px, 1.8vw, 14px)",
-                letterSpacing: "0.28em",
-              }}
-            >
-              Scent Guide
-            </p>
+            
             <h1
               className="font-heading font-extrabold text-[#F4EADE]"
               style={{
