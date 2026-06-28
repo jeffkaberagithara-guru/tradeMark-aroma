@@ -23,18 +23,26 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-[#0B0B0B]/95 backdrop-blur-md border-b border-[#2A2519]">
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-[72px]">
-          {/* Logo */}
+      <div className="max-w-[1200px] mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="flex items-center justify-between h-[76px]">
+          {/* Brand Section - Left */}
           <Link
             to="/"
-            className="font-heading text-2xl font-semibold text-[#F4EADE] no-underline tracking-wide"
+            className="flex flex-col no-underline group flex-shrink-0"
           >
-            TradeMark <span className="text-[#C9A94A]">Aroma</span>
+            {/* Main Title - Bold Gold Gradient */}
+            <span className="font-heading text-[22px] font-bold tracking-[0.08em] bg-gradient-to-r from-[#C9A94A] via-[#E8D5A3] to-[#C9A94A] bg-clip-text text-transparent leading-none">
+              TRADEMARK AROMA
+            </span>
+
+            {/* Motto - Clean & Minimal */}
+            <span className="text-[10px] font-body font-light tracking-[0.3em] text-[#888888] uppercase mt-1 leading-none">
+              Scent that defines you
+            </span>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          {/* Navigation Section - Center/Right */}
+          <div className="hidden md:flex items-center gap-10">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -54,7 +62,7 @@ export default function Navbar() {
               )}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 rounded-full bg-[#C9A94A] px-5 py-2.5 font-body text-sm font-bold uppercase tracking-[0.08em] text-[#0B0B0B] no-underline transition-opacity hover:opacity-90"
+              className="flex items-center gap-2 rounded-full bg-[#C9A94A] px-6 py-2.5 font-body text-sm font-bold uppercase tracking-[0.08em] text-[#0B0B0B] no-underline transition-all hover:opacity-90 hover:scale-105"
             >
               <ShoppingBag size={16} />
               Order
@@ -64,7 +72,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={toggleMenu}
-            className="md:hidden text-[#F4EADE] hover:text-[#C9A94A] transition-colors"
+            className="md:hidden text-[#F4EADE] hover:text-[#C9A94A] transition-colors p-2"
             aria-label="Toggle menu"
           >
             {isOpen ? <X size={28} /> : <Menu size={28} />}
@@ -82,7 +90,7 @@ export default function Navbar() {
             transition={{ duration: 0.3 }}
             className="md:hidden bg-[#1C1A14] border-t border-[#2A2519] overflow-hidden"
           >
-            <div className="px-4 py-6 flex flex-col gap-4">
+            <div className="px-6 py-6 flex flex-col gap-4">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
