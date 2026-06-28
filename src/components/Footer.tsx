@@ -6,6 +6,7 @@ const footerLinks = [
   { label: "Our Story", path: "/our-story" },
   { label: "Fragrances", path: "/fragrances" },
   { label: "Scent Guide", path: "/scent-guide" },
+  { label: "FAQ", path: "/faq" },
   { label: "Contact", path: "/contact" },
 ];
 
