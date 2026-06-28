@@ -10,6 +10,11 @@ import Fragrances from "./pages/Fragrances";
 import OurStory from "./pages/OurStory";
 import ScentGuide from "./pages/ScentGuide";
 import Contact from "./pages/Contact";
+import FloatingWhatsApp from "./components/FloatingWhatsApp";
+import TestimonialsSection from "./components/home/TestimonialsSection";
+import NewsletterSignup from "./components/NewsletterSignup";
+import FAQ from "./components/FAQ";
+import BestSellersSection from "./components/home/BestSellersSection";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -24,8 +29,11 @@ function Home() {
     <div className="bg-[#0B0B0B]">
       <HeroSection />
       <CollectionSection />
+      <BestSellersSection />
       <OurStorySection />
+      <TestimonialsSection />
       <PersonalServiceSection />
+      <NewsletterSignup />
     </div>
   );
 }
@@ -42,8 +50,10 @@ export default function App() {
           <Route path="/our-story" element={<OurStory />} />
           <Route path="/scent-guide" element={<ScentGuide />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/faq" element={<FAQ />} />
         </Routes>
         <Footer />
+        <FloatingWhatsApp />
       </div>
     </BrowserRouter>
   );
