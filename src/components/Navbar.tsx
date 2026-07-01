@@ -6,7 +6,7 @@ import { WA_LINK } from "../constants/theme";
 
 const navLinks = [
   { label: "Home", path: "/" },
-  { label: "Our Story", path: "/our-story" },
+  { label: "About", path: "/about" },
   { label: "Fragrances", path: "/fragrances" },
   { label: "Scent Guide", path: "/scent-guide" },
   { label: "Gift Finder", path: "/gift-finder" },
@@ -25,23 +25,23 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-[#0B0B0B]/95 backdrop-blur-md border-b border-[#2A2519]">
-      <div className="max-w-[1200px] mx-auto px-6 sm:px-10 lg:px-12">
-        <div className="flex items-center justify-between h-[72px]">
+      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-[76px]">
           {/* Brand Section - Left */}
           <Link
             to="/"
             className="flex flex-col no-underline group flex-shrink-0"
           >
-            <span className="font-heading text-[20px] font-semibold tracking-[0.1em] bg-gradient-to-r from-[#C9A94A] via-[#E8D5A3] to-[#C9A94A] bg-clip-text text-transparent leading-none">
+            <span className="font-heading text-[22px] font-semibold tracking-[0.1em] bg-gradient-to-r from-[#C9A94A] via-[#E8D5A3] to-[#C9A94A] bg-clip-text text-transparent leading-none">
               TRADEMARK AROMA
             </span>
-            <span className="text-[9px] font-body font-light tracking-[0.25em] text-[#888888] uppercase mt-1 leading-none">
+            <span className="text-[10px] font-body font-light tracking-[0.25em] text-[#888888] uppercase mt-1 leading-none">
               Scent that defines you
             </span>
           </Link>
 
           {/* Navigation Section - Right */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-6 xl:gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -68,18 +68,40 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile & Tablet Navigation - Hidden on large screens */}
+          <div className="hidden md:flex lg:hidden items-center gap-4">
+            <a
+              href={WA_LINK(
+                "Hi, I'd like to place an order with Trademark Aroma",
+              )}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 rounded-full bg-[#C9A94A] px-4 py-1.5 font-body text-[12px] font-bold uppercase tracking-[0.06em] text-[#0B0B0B] no-underline transition-all hover:opacity-90"
+            >
+              <ShoppingBag size={14} />
+              Order
+            </a>
+            <button
+              onClick={toggleMenu}
+              className="text-[#F4EADE] hover:text-[#C9A94A] transition-colors p-1"
+              aria-label="Toggle menu"
+            >
+              {isOpen ? <X size={26} /> : <Menu size={26} />}
+            </button>
+          </div>
+
+          {/* Mobile Menu Button - Only on small screens */}
           <button
             onClick={toggleMenu}
-            className="md:hidden text-[#F4EADE] hover:text-[#C9A94A] transition-colors p-2"
+            className="md:hidden text-[#F4EADE] hover:text-[#C9A94A] transition-colors p-1"
             aria-label="Toggle menu"
           >
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
+            {isOpen ? <X size={26} /> : <Menu size={26} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Mobile & Tablet Navigation Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -87,15 +109,15 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-[#1C1A14] border-t border-[#2A2519] overflow-hidden"
+            className="lg:hidden bg-[#1C1A14] border-t border-[#2A2519] overflow-hidden"
           >
-            <div className="px-6 py-6 flex flex-col gap-3">
+            <div className="px-6 py-5 flex flex-col gap-2">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
                   onClick={closeMenu}
-                  className={`font-body text-base font-medium uppercase tracking-[0.12em] no-underline transition-colors duration-200 py-2 ${
+                  className={`font-body text-[15px] font-medium uppercase tracking-[0.12em] no-underline transition-colors duration-200 py-2 border-b border-[#2A2519]/50 last:border-0 ${
                     isActive(link.path)
                       ? "text-[#C9A94A]"
                       : "text-[#F4EADE] hover:text-[#C9A94A]"
@@ -111,7 +133,7 @@ export default function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={closeMenu}
-                className="flex items-center justify-center gap-2 rounded-full bg-[#C9A94A] px-6 py-3 font-body text-sm font-bold uppercase tracking-[0.08em] text-[#0B0B0B] no-underline transition-opacity hover:opacity-90 mt-2"
+                className="flex items-center justify-center gap-2 rounded-full bg-[#C9A94A] px-6 py-3 font-body text-sm font-bold uppercase tracking-[0.08em] text-[#0B0B0B] no-underline transition-opacity hover:opacity-90 mt-3"
               >
                 <ShoppingBag size={18} />
                 Order Now
