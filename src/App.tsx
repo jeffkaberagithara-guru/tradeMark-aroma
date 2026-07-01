@@ -11,17 +11,28 @@ import TestimonialsSection from "./components/home/TestimonialsSection";
 import PersonalServiceSection from "./components/home/PersonalServiceSection";
 import NewsletterSignup from "./components/NewsletterSignup";
 import Fragrances from "./pages/Fragrances";
-import OurStory from "./pages/OurStory";
+import About from "./pages/About";
 import ScentGuide from "./pages/ScentGuide";
 import Contact from "./pages/Contact";
 import FAQ from "./components/FAQ";
 import GiftFinder from "./components/GiftFinder";
+import NotFound from "./pages/NotFound";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
+
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "instant" });
+    // Smooth scroll to top with a slight delay for better UX
+    const timeoutId = setTimeout(() => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }, 100);
+
+    return () => clearTimeout(timeoutId);
   }, [pathname]);
+
   return null;
 }
 
@@ -47,12 +58,14 @@ export default function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
           <Route path="/fragrances" element={<Fragrances />} />
-          <Route path="/our-story" element={<OurStory />} />
+          <Route path="/our-story" element={<About />} />
           <Route path="/scent-guide" element={<ScentGuide />} />
           <Route path="/gift-finder" element={<GiftFinder />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
         <FloatingWhatsApp />
