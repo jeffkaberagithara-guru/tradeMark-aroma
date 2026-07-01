@@ -1,5 +1,14 @@
 ﻿import { Link } from "react-router-dom";
 import { WA_LINK } from "../constants/theme";
+import {
+  Facebook,
+  Instagram,
+  Twitter,
+  Youtube,
+  Mail,
+  Phone,
+  MapPin,
+} from "lucide-react";
 
 const footerLinks = [
   { label: "Home", path: "/" },
@@ -9,6 +18,29 @@ const footerLinks = [
   { label: "Gift Finder", path: "/gift-finder" },
   { label: "FAQ", path: "/faq" },
   { label: "Contact", path: "/contact" },
+];
+
+const socialLinks = [
+  {
+    icon: Facebook,
+    href: "https://facebook.com/trademarkaroma",
+    label: "Facebook",
+  },
+  {
+    icon: Instagram,
+    href: "https://instagram.com/trademarkaroma",
+    label: "Instagram",
+  },
+  {
+    icon: Twitter,
+    href: "https://twitter.com/trademarkaroma",
+    label: "Twitter",
+  },
+  {
+    icon: Youtube,
+    href: "https://youtube.com/trademarkaroma",
+    label: "YouTube",
+  },
 ];
 
 export default function Footer() {
@@ -30,6 +62,24 @@ export default function Footer() {
             for the bold, the refined, and everyone in between.
           </p>
 
+          <div className="flex items-center gap-4 mt-8">
+            {socialLinks.map((social) => {
+              const Icon = social.icon;
+              return (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full border border-[#2A2519] flex items-center justify-center text-[#888888] hover:text-[#C9A94A] hover:border-[#C9A94A] transition-all duration-300"
+                  aria-label={social.label}
+                >
+                  <Icon size={18} />
+                </a>
+              );
+            })}
+          </div>
+
           <a
             href={WA_LINK(
               "Hi, I'd like to order a fragrance from Trademark Aroma",
@@ -49,12 +99,12 @@ export default function Footer() {
             <p className="font-body text-[13px] font-semibold uppercase tracking-[0.2em] text-[#6B5A2E] mb-5">
               Explore
             </p>
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-3">
               {footerLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
-                  className="font-body text-[14px] sm:text-[15px] font-semibold uppercase tracking-[0.06em] text-[#F4EADE] no-underline hover:text-[#C9A94A] transition-colors duration-200"
+                  className="font-body text-[14px] sm:text-[15px] font-medium uppercase tracking-[0.06em] text-[#F4EADE] no-underline hover:text-[#C9A94A] transition-colors duration-200"
                 >
                   {link.label}
                 </Link>
@@ -67,18 +117,34 @@ export default function Footer() {
             <p className="font-body text-[13px] font-semibold uppercase tracking-[0.2em] text-[#6B5A2E] mb-5">
               Contact
             </p>
-            <a
-              href={WA_LINK("Hi, I'd like to connect with Trademark Aroma")}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-body text-[15px] sm:text-[16px] lg:text-[17px] font-semibold text-[#F4EADE] no-underline block mb-4 hover:text-[#C9A94A] transition-colors duration-200"
-            >
-              +254 114 036 858
-            </a>
-            <p className="font-body text-[13px] sm:text-[14px] text-[#888888] leading-[1.8] max-w-[260px]">
-              Nairobi, Kenya · Personal fragrance consultations and same-day
-              support.
-            </p>
+            <div className="flex flex-col gap-4">
+              <a
+                href="tel:+254114036858"
+                className="flex items-center gap-3 font-body text-[15px] text-[#F4EADE] no-underline hover:text-[#C9A94A] transition-colors duration-200"
+              >
+                <Phone size={16} className="text-[#6B5A2E]" />
+                +254 114 036 858
+              </a>
+              <a
+                href="mailto:hello@trademarkaroma.com"
+                className="flex items-center gap-3 font-body text-[15px] text-[#F4EADE] no-underline hover:text-[#C9A94A] transition-colors duration-200"
+              >
+                <Mail size={16} className="text-[#6B5A2E]" />
+                hello@trademarkaroma.com
+              </a>
+              <div className="flex items-start gap-3 font-body text-[15px] text-[#F4EADE]">
+                <MapPin
+                  size={16}
+                  className="text-[#6B5A2E] mt-1 flex-shrink-0"
+                />
+                <span>Nairobi, Kenya</span>
+              </div>
+              <p className="font-body text-[13px] text-[#888888] leading-[1.8] mt-2">
+                Personal fragrance consultations
+                <br />
+                and same-day support.
+              </p>
+            </div>
           </div>
         </div>
       </div>
