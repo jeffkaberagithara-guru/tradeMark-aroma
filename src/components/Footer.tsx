@@ -1,4 +1,4 @@
-﻿import { Link } from "react-router-dom";
+﻿import { Link, useLocation, useNavigate } from "react-router-dom";
 import { WA_LINK } from "../constants/theme";
 import {
   Facebook,
@@ -12,12 +12,12 @@ import {
 
 const footerLinks = [
   { label: "Home", path: "/" },
-  { label: "Our Story", path: "/our-story" },
   { label: "Fragrances", path: "/fragrances" },
   { label: "Scent Guide", path: "/scent-guide" },
   { label: "Gift Finder", path: "/gift-finder" },
   { label: "FAQ", path: "/faq" },
   { label: "Contact", path: "/contact" },
+  { label: "About", path: "/about" },
 ];
 
 const socialLinks = [
@@ -44,6 +44,21 @@ const socialLinks = [
 ];
 
 export default function Footer() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleHomeClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (location.pathname === "/") {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    } else {
+      navigate("/");
+    }
+  };
+
   return (
     <footer className="w-full bg-[#1C1A14] text-[#F4EADE] px-6 py-16 sm:px-10 lg:px-16">
       <div className="max-w-[1200px] mx-auto flex flex-col gap-12 lg:flex-row lg:justify-between lg:items-start">
@@ -100,15 +115,29 @@ export default function Footer() {
               Explore
             </p>
             <div className="flex flex-col gap-3">
-              {footerLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  className="font-body text-[14px] sm:text-[15px] font-medium uppercase tracking-[0.06em] text-[#F4EADE] no-underline hover:text-[#C9A94A] transition-colors duration-200"
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {footerLinks.map((link) => {
+                // Special handling for Home link
+                if (link.path === "/") {
+                  return (
+                    <button
+                      key={link.path}
+                      onClick={handleHomeClick}
+                      className="font-body text-[14px] sm:text-[15px] font-medium uppercase tracking-[0.06em] text-[#F4EADE] no-underline hover:text-[#C9A94A] transition-colors duration-200 text-left cursor-pointer bg-transparent border-none p-0"
+                    >
+                      {link.label}
+                    </button>
+                  );
+                }
+                return (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    className="font-body text-[14px] sm:text-[15px] font-medium uppercase tracking-[0.06em] text-[#F4EADE] no-underline hover:text-[#C9A94A] transition-colors duration-200"
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
             </div>
           </div>
 
