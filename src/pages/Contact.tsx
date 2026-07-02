@@ -57,11 +57,11 @@ export default function Contact() {
           </video>
 
           {/* Overlay Gradients for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[rgba(11,11,11,0.2)] via-[rgba(11,11,11,0.5)] via-60% to-[rgba(11,11,11,0.95)]" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[rgba(11,11,11,0.9)] via-transparent to-[rgba(11,11,11,0.1)]" />
+          <div className="absolute inset-0 bg-linear-to-b from-[rgba(11,11,11,0.2)] via-[rgba(11,11,11,0.5)] via-60% to-[rgba(11,11,11,0.95)]" />
+          <div className="absolute inset-0 bg-linear-to-t from-[rgba(11,11,11,0.9)] via-transparent to-[rgba(11,11,11,0.1)]" />
 
           {/* Subtle gold accent overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[rgba(201,169,74,0.08)] to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-r from-transparent via-[rgba(201,169,74,0.08)] to-transparent" />
         </div>
 
         {/* Content */}
@@ -76,7 +76,7 @@ export default function Contact() {
             <h1 className="mt-8 font-heading text-[clamp(48px,7vw,86px)] leading-[1.05] font-extrabold text-[#F4EADE]">
               We'd <span className="text-[#C9A94A]">Love to Hear</span> From You
             </h1>
-            <p className="mt-4 text-[20px] leading-[1.9] text-[#DDDDDD] max-w-[680px] mx-auto font-body">
+            <p className="mt-4 text-[20px] leading-[1.9] text-[#DDDDDD] max-w-170 mx-auto font-body">
               Whether you have questions about our fragrances or need personal
               fragrance consultations, our team is here to help you find your
               perfect scent.
@@ -94,7 +94,7 @@ export default function Contact() {
       </section>
 
       {/* Contact Info & Form Grid */}
-      <section className="relative z-10 py-16 px-6 max-w-[1200px] mx-auto grid gap-[60px] grid-cols-1 sm:grid-cols-2 items-start -mt-4">
+      <section className="relative z-10 py-16 px-6 max-w-300 mx-auto grid gap-[60px] grid-cols-1 sm:grid-cols-2 items-start -mt-4">
         {/* Contact Information */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
@@ -109,7 +109,7 @@ export default function Contact() {
           <div className="flex flex-col gap-7">
             {/* Phone */}
             <div className="flex gap-4 items-start">
-              <div className="w-12 h-12 rounded-full bg-[rgba(201,169,74,0.12)] border border-[rgba(201,169,74,0.18)] flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 rounded-full bg-[rgba(201,169,74,0.12)] border border-[rgba(201,169,74,0.18)] flex items-center justify-center shrink-0">
                 <Phone size={20} color="#C9A94A" />
               </div>
               <div>
@@ -127,7 +127,7 @@ export default function Contact() {
 
             {/* Email */}
             <div className="flex gap-4 items-start">
-              <div className="w-12 h-12 rounded-full bg-[rgba(201,169,74,0.12)] border border-[rgba(201,169,74,0.18)] flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 rounded-full bg-[rgba(201,169,74,0.12)] border border-[rgba(201,169,74,0.18)] flex items-center justify-center shrink-0">
                 <Mail size={20} color="#C9A94A" />
               </div>
               <div>
@@ -145,7 +145,7 @@ export default function Contact() {
 
             {/* Location */}
             <div className="flex gap-4 items-start">
-              <div className="w-12 h-12 rounded-full bg-[rgba(201,169,74,0.12)] border border-[rgba(201,169,74,0.18)] flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 rounded-full bg-[rgba(201,169,74,0.12)] border border-[rgba(201,169,74,0.18)] flex items-center justify-center shrink-0">
                 <MapPin size={20} color="#C9A94A" />
               </div>
               <div>
@@ -160,7 +160,7 @@ export default function Contact() {
 
             {/* Business Hours */}
             <div className="flex gap-4 items-start">
-              <div className="w-12 h-12 rounded-full bg-[rgba(201,169,74,0.12)] border border-[rgba(201,169,74,0.18)] flex items-center justify-center flex-shrink-0">
+              <div className="w-12 h-12 rounded-full bg-[rgba(201,169,74,0.12)] border border-[rgba(201,169,74,0.18)] flex items-center justify-center shrink-0">
                 <Clock size={20} color="#C9A94A" />
               </div>
               <div>
@@ -281,7 +281,7 @@ export default function Contact() {
       </section>
 
       {/* Bottom CTA */}
-      <section className="relative z-10 pt-[80px] px-6 max-w-[1200px] mx-auto text-center border-t border-[#2A2519]">
+      <section className="relative z-10 pt-20 px-6 max-w-300 mx-auto text-center border-t border-[#2A2519]">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -291,7 +291,7 @@ export default function Contact() {
           <h2 className="m-0 text-[clamp(40px,7vw,60px)] font-bold text-[#F4EADE] font-heading">
             Looking for Your Signature Scent?
           </h2>
-          <p className="mt-3 text-[18px] leading-[1.8] text-[#888888] max-w-[620px] mx-auto font-body">
+          <p className="mt-3 text-[18px] leading-[1.8] text-[#888888] max-w-155 mx-auto font-body">
             Our fragrance consultants are ready to help you explore our
             collection and find a scent that truly defines you.
           </p>
@@ -303,7 +303,7 @@ export default function Contact() {
             rel="noopener noreferrer"
             whileHover={{ scale: 1.04 }}
             whileTap={{ scale: 0.97 }}
-            className="inline-block mt-6 px-10 py-4 rounded-[32px] bg-[#C9A94A] text-[#0B0B0B] font-bold tracking-[0.12em] uppercase no-underline font-body"
+            className="inline-block mt-6 px-10 py-4 rounded-4xl bg-[#C9A94A] text-[#0B0B0B] font-bold tracking-[0.12em] uppercase no-underline font-body"
           >
             Book a Consultation
           </motion.a>

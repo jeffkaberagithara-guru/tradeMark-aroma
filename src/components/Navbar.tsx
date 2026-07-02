@@ -39,14 +39,14 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-[#0B0B0B]/95 backdrop-blur-md border-b border-[#2A2519]">
-      <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-[76px]">
+      <div className="max-w-300 mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-19">
           {/* Brand Section - Left */}
           <button
             onClick={handleHomeClick}
-            className="flex flex-col no-underline group flex-shrink-0 cursor-pointer bg-transparent border-none text-left p-0"
+            className="flex flex-col no-underline group shrink-0 cursor-pointer bg-transparent border-none text-left p-0"
           >
-            <span className="font-heading text-[22px] font-semibold tracking-[0.1em] bg-gradient-to-r from-[#C9A94A] via-[#E8D5A3] to-[#C9A94A] bg-clip-text text-transparent leading-none">
+            <span className="font-heading text-[22px] font-semibold tracking-widest bg-linear-to-r from-[#C9A94A] via-[#E8D5A3] to-[#C9A94A] bg-clip-text text-transparent leading-none">
               TRADEMARK AROMA
             </span>
             <span className="text-[10px] font-body font-light tracking-[0.25em] text-[#888888] uppercase mt-1 leading-none">

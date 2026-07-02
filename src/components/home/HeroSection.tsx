@@ -40,7 +40,7 @@ export default function HeroSection() {
 
       {/* Content - Centered with flex */}
       <div className="relative z-2 w-full h-full flex flex-col items-center justify-center px-4 sm:px-6">
-        <div className="w-full max-w-[850px] flex flex-col items-center text-center">
+        <div className="w-full max-w-212.5 flex flex-col items-center text-center">
           {/* Top Label */}
           <motion.p
             initial={{ opacity: 0, y: 10 }}
@@ -68,7 +68,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="font-body text-[clamp(14px,1.6vw,18px)] leading-[1.7] text-[#DDDDDD] max-w-[540px] mb-5 sm:mb-6 px-2"
+            className="font-body text-[clamp(14px,1.6vw,18px)] leading-[1.7] text-[#DDDDDD] max-w-135 mb-5 sm:mb-6 px-2"
             style={{ textShadow: "0 2px 12px rgba(0,0,0,0.4)" }}
           >
             Handpicked perfumes and colognes for those who understand that

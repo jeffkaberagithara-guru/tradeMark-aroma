@@ -88,11 +88,11 @@ export default function OurStory() {
           </video>
 
           {/* Overlay Gradients for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[rgba(11,11,11,0.2)] via-[rgba(11,11,11,0.5)] via-60% to-[rgba(11,11,11,0.95)]" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[rgba(11,11,11,0.9)] via-transparent to-[rgba(11,11,11,0.1)]" />
+          <div className="absolute inset-0 bg-linear-to-b from-[rgba(11,11,11,0.2)] via-[rgba(11,11,11,0.5)] via-60% to-[rgba(11,11,11,0.95)]" />
+          <div className="absolute inset-0 bg-linear-to-t from-[rgba(11,11,11,0.9)] via-transparent to-[rgba(11,11,11,0.1)]" />
 
           {/* Subtle gold accent overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[rgba(201,169,74,0.08)] to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-r from-transparent via-[rgba(201,169,74,0.08)] to-transparent" />
         </div>
 
         {/* Content */}

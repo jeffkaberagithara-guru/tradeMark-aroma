@@ -65,7 +65,7 @@ const FAQItem = ({ faq }: { faq: FAQItem }) => {
         <span className="font-body font-medium text-[#F4EADE] text-base pr-4">
           {faq.question}
         </span>
-        <span className="flex-shrink-0 text-[#6B5A2E] group-hover:text-[#C9A94A] transition-colors">
+        <span className="shrink-0 text-[#6B5A2E] group-hover:text-[#C9A94A] transition-colors">
           {isOpen ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
         </span>
       </button>
@@ -90,7 +90,7 @@ const FAQItem = ({ faq }: { faq: FAQItem }) => {
 
 export default function FAQ() {
   return (
-    <section className="py-20 px-4 max-w-[900px] mx-auto min-h-[80vh]">
+    <section className="py-20 px-4 max-w-225 mx-auto min-h-[80vh]">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -131,7 +131,7 @@ export default function FAQ() {
           )}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block px-8 py-3 rounded-full bg-[#C9A94A] text-[#0B0B0B] font-body font-semibold uppercase tracking-[0.1em] text-sm hover:opacity-90 transition-all duration-300"
+          className="inline-block px-8 py-3 rounded-full bg-[#C9A94A] text-[#0B0B0B] font-body font-semibold uppercase tracking-widest text-sm hover:opacity-90 transition-all duration-300"
         >
           Contact Us
         </a>

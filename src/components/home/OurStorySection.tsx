@@ -13,7 +13,7 @@ export default function OurStorySection() {
 
   return (
     <section
-      className="w-full max-w-[1200px] mx-auto"
+      className="w-full max-w-300 mx-auto"
       style={{ padding: "clamp(60px, 10vw, 100px) clamp(16px, 4vw, 24px)" }}
     >
       <div

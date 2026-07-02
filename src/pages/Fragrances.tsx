@@ -326,7 +326,7 @@ export default function Fragrances() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0B0B0B] text-[#F4EADE] pt-[72px]">
+    <div className="min-h-screen bg-[#0B0B0B] text-[#F4EADE] pt-18">
       {/* Hero Section */}
       <section className="relative min-h-[40vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -348,8 +348,8 @@ export default function Fragrances() {
               className="w-full h-full object-cover"
             />
           </video>
-          <div className="absolute inset-0 bg-gradient-to-b from-[rgba(11,11,11,0.2)] via-[rgba(11,11,11,0.5)] via-60% to-[rgba(11,11,11,0.95)]" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[rgba(11,11,11,0.9)] via-transparent to-[rgba(11,11,11,0.1)]" />
+          <div className="absolute inset-0 bg-linear-to-b from-[rgba(11,11,11,0.2)] via-[rgba(11,11,11,0.5)] via-60% to-[rgba(11,11,11,0.95)]" />
+          <div className="absolute inset-0 bg-linear-to-t from-[rgba(11,11,11,0.9)] via-transparent to-[rgba(11,11,11,0.1)]" />
         </div>
 
         <div className="relative z-10 w-full max-w-6xl mx-auto px-4 sm:px-6 py-16 text-center">
@@ -380,7 +380,7 @@ export default function Fragrances() {
       </section>
 
       {/* Search & Filters */}
-      <section className="px-4 sm:px-6 max-w-[1200px] mx-auto -mt-4 relative z-10">
+      <section className="px-4 sm:px-6 max-w-300 mx-auto -mt-4 relative z-10">
         <div className="bg-[#1C1A14] rounded-2xl border border-[#2A2519] p-4 md:p-6">
           <div className="flex flex-col md:flex-row gap-4">
             <div className="flex-1 relative">
@@ -488,7 +488,7 @@ export default function Fragrances() {
       </section>
 
       {/* Fragrance Grid */}
-      <section className="px-4 sm:px-6 max-w-[1200px] mx-auto py-8 relative z-10">
+      <section className="px-4 sm:px-6 max-w-300 mx-auto py-8 relative z-10">
         {isLoading ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
             {[...Array(6)].map((_, i) => (
@@ -534,7 +534,7 @@ export default function Fragrances() {
                       transition: { duration: 0.3, ease: "easeOut" },
                     }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0B]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
+                  <div className="absolute inset-0 bg-linear-to-t from-[#0B0B0B]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
 
                   {/* Badges */}
                   <div className="absolute top-3 left-3 flex flex-col gap-1.5">
@@ -654,7 +654,7 @@ export default function Fragrances() {
 
       {/* Decorative CTA */}
       <section className="py-16 px-6 border-t border-[#2A2519] text-center">
-        <div className="max-w-[960px] mx-auto">
+        <div className="max-w-240 mx-auto">
           <h2 className="font-heading text-[clamp(40px,6vw,56px)] font-extrabold text-[#F4EADE]">
             Need help choosing?
           </h2>
@@ -744,7 +744,7 @@ export default function Fragrances() {
 
                 {selectedFragrance.notes && (
                   <div className="mb-4">
-                    <p className="font-body text-[#888888] text-xs uppercase tracking-[0.1em] mb-2">
+                    <p className="font-body text-[#888888] text-xs uppercase tracking-widest mb-2">
                       Fragrance Notes
                     </p>
                     <div className="flex flex-wrap gap-2">
@@ -762,7 +762,7 @@ export default function Fragrances() {
 
                 <div className="flex flex-wrap gap-4 mb-4">
                   <div className="bg-[#0B0B0B] rounded-lg px-4 py-2 border border-[#2A2519]">
-                    <span className="font-body text-[#888888] text-xs uppercase tracking-[0.1em]">
+                    <span className="font-body text-[#888888] text-xs uppercase tracking-widest">
                       Gender
                     </span>
                     <p className="font-body text-[#F4EADE] font-semibold">
@@ -770,7 +770,7 @@ export default function Fragrances() {
                     </p>
                   </div>
                   <div className="bg-[#0B0B0B] rounded-lg px-4 py-2 border border-[#2A2519]">
-                    <span className="font-body text-[#888888] text-xs uppercase tracking-[0.1em]">
+                    <span className="font-body text-[#888888] text-xs uppercase tracking-widest">
                       Mood
                     </span>
                     <div className="flex flex-wrap gap-1">
@@ -786,7 +786,7 @@ export default function Fragrances() {
                   </div>
                   {selectedFragrance.longevity && (
                     <div className="bg-[#0B0B0B] rounded-lg px-4 py-2 border border-[#2A2519]">
-                      <span className="font-body text-[#888888] text-xs uppercase tracking-[0.1em]">
+                      <span className="font-body text-[#888888] text-xs uppercase tracking-widest">
                         Longevity
                       </span>
                       <p className="font-body text-[#F4EADE] font-semibold">

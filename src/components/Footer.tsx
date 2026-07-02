@@ -61,9 +61,9 @@ export default function Footer() {
 
   return (
     <footer className="w-full bg-[#1C1A14] text-[#F4EADE] px-6 py-16 sm:px-10 lg:px-16">
-      <div className="max-w-[1200px] mx-auto flex flex-col gap-12 lg:flex-row lg:justify-between lg:items-start">
+      <div className="max-w-300 mx-auto flex flex-col gap-12 lg:flex-row lg:justify-between lg:items-start">
         {/* Brand block */}
-        <div className="flex flex-col flex-1 min-w-0 lg:max-w-[520px]">
+        <div className="flex flex-col flex-1 min-w-0 lg:max-w-130">
           <p className="font-body text-[13px] font-semibold uppercase tracking-[0.22em] text-[#C9A94A] mb-4">
             TradeMark Aroma
           </p>
@@ -110,7 +110,7 @@ export default function Footer() {
         {/* Links and contact */}
         <div className="flex flex-col gap-10 sm:flex-row sm:gap-16">
           {/* Explore */}
-          <div className="min-w-[140px]">
+          <div className="min-w-35">
             <p className="font-body text-[13px] font-semibold uppercase tracking-[0.2em] text-[#6B5A2E] mb-5">
               Explore
             </p>
@@ -142,7 +142,7 @@ export default function Footer() {
           </div>
 
           {/* Contact */}
-          <div className="min-w-[160px]">
+          <div className="min-w-40">
             <p className="font-body text-[13px] font-semibold uppercase tracking-[0.2em] text-[#6B5A2E] mb-5">
               Contact
             </p>
@@ -164,7 +164,7 @@ export default function Footer() {
               <div className="flex items-start gap-3 font-body text-[15px] text-[#F4EADE]">
                 <MapPin
                   size={16}
-                  className="text-[#6B5A2E] mt-1 flex-shrink-0"
+                  className="text-[#6B5A2E] mt-1 shrink-0"
                 />
                 <span>Nairobi, Kenya</span>
               </div>
@@ -179,7 +179,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="max-w-[1200px] mx-auto mt-12 pt-6 border-t border-[#2A2519] flex flex-col gap-2 sm:flex-row sm:justify-between font-body text-[13px] text-[#888888]">
+      <div className="max-w-300 mx-auto mt-12 pt-6 border-t border-[#2A2519] flex flex-col gap-2 sm:flex-row sm:justify-between font-body text-[13px] text-[#888888]">
         <span>
           {`© ${new Date().getFullYear()} TradeMark Aroma. All rights reserved.`}
         </span>

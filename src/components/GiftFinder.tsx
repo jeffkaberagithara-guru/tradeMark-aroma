@@ -230,8 +230,8 @@ export default function GiftFinder() {
   const recommendation = showResults ? getRecommendation() : null;
 
   return (
-    <div className="min-h-screen bg-[#0B0B0B] text-[#F4EADE] pt-[72px]">
-      <section className="py-20 px-4 max-w-[900px] mx-auto">
+    <div className="min-h-screen bg-[#0B0B0B] text-[#F4EADE] pt-18">
+      <section className="py-20 px-4 max-w-225 mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

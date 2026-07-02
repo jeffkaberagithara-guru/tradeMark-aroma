@@ -343,11 +343,11 @@ export default function ScentGuide() {
           </video>
 
           {/* Overlay Gradients for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[rgba(11,11,11,0.2)] via-[rgba(11,11,11,0.5)] via-60% to-[rgba(11,11,11,0.95)]" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[rgba(11,11,11,0.9)] via-transparent to-[rgba(11,11,11,0.1)]" />
+          <div className="absolute inset-0 bg-linear-to-b from-[rgba(11,11,11,0.2)] via-[rgba(11,11,11,0.5)] via-60% to-[rgba(11,11,11,0.95)]" />
+          <div className="absolute inset-0 bg-linear-to-t from-[rgba(11,11,11,0.9)] via-transparent to-[rgba(11,11,11,0.1)]" />
 
           {/* Subtle gold accent overlay */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[rgba(201,169,74,0.08)] to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-r from-transparent via-[rgba(201,169,74,0.08)] to-transparent" />
         </div>
 
         {/* Content */}
@@ -395,7 +395,7 @@ export default function ScentGuide() {
 
       {/* Scent Families Grid */}
       <section
-        className="w-full max-w-[1200px] mx-auto relative z-10 -mt-4"
+        className="w-full max-w-300 mx-auto relative z-10 -mt-4"
         style={{ padding: "0 clamp(16px, 4vw, 24px) clamp(48px, 8vw, 80px)" }}
       >
         <div
@@ -409,7 +409,7 @@ export default function ScentGuide() {
                 key={family.label}
                 whileHover={{ y: -6 }}
                 transition={{ duration: 0.3 }}
-                className="rounded-[24px] border border-[#2A2519] bg-[#1C1A14]"
+                className="rounded-3xl border border-[#2A2519] bg-[#1C1A14]"
                 style={{ padding: "clamp(24px, 3vw, 32px)" }}
               >
                 <div className="flex items-center justify-between gap-4">
@@ -434,7 +434,7 @@ export default function ScentGuide() {
                     </h2>
                   </div>
                   <div
-                    className="flex-shrink-0 flex items-center justify-center rounded-[20px] bg-[#C9A94A]/10 text-[#C9A94A]"
+                    className="shrink-0 flex items-center justify-center rounded-[20px] bg-[#C9A94A]/10 text-[#C9A94A]"
                     style={{ width: "52px", height: "52px" }}
                   >
                     <Icon size={22} />
@@ -470,7 +470,7 @@ export default function ScentGuide() {
 
       {/* Interactive Questionnaire */}
       <section
-        className="w-full max-w-[1200px] mx-auto relative z-10"
+        className="w-full max-w-300 mx-auto relative z-10"
         style={{ padding: "0 clamp(16px, 4vw, 24px) clamp(48px, 8vw, 80px)" }}
       >
         <motion.div
@@ -478,7 +478,7 @@ export default function ScentGuide() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
-          className="rounded-[32px] border border-[#2A2519] bg-[#1C1A14] overflow-hidden"
+          className="rounded-4xl border border-[#2A2519] bg-[#1C1A14] overflow-hidden"
           style={{ padding: "clamp(32px, 5vw, 48px)" }}
         >
           <div className="text-center mb-8">
@@ -570,7 +570,7 @@ export default function ScentGuide() {
                           whileHover={{ scale: 1.02 }}
                           whileTap={{ scale: 0.98 }}
                           onClick={() => handleAnswerSelect(option.value)}
-                          className={`text-left p-4 rounded-[16px] border-2 transition-all font-body flex items-center gap-3 ${
+                          className={`text-left p-4 rounded-2xl border-2 transition-all font-body flex items-center gap-3 ${
                             selectedAnswer === option.value
                               ? "border-[#C9A94A] bg-[#C9A94A]/10"
                               : "border-[#2A2519] bg-transparent hover:border-[#6B5A2E]"
@@ -682,7 +682,7 @@ export default function ScentGuide() {
                           >
                             {family.title}
                           </h4>
-                          <p className="font-body text-[#6B5A2E] text-sm uppercase tracking-[0.1em]">
+                          <p className="font-body text-[#6B5A2E] text-sm uppercase tracking-widest">
                             {family.label}
                           </p>
                         </div>
@@ -692,7 +692,7 @@ export default function ScentGuide() {
                         {fragrances.map((frag) => (
                           <div
                             key={frag.name}
-                            className="bg-[#1C1A14] rounded-[12px] p-3 border border-[#2A2519]"
+                            className="bg-[#1C1A14] rounded-xl p-3 border border-[#2A2519]"
                           >
                             <p className="font-heading font-semibold text-[#F4EADE]">
                               {frag.name}
@@ -770,7 +770,7 @@ export default function ScentGuide() {
         }}
       >
         <div
-          className="max-w-[1200px] mx-auto rounded-[32px] border border-[#2A2519] bg-[#1C1A14]/80 text-center"
+          className="max-w-300 mx-auto rounded-[32px] border border-[#2A2519] bg-[#1C1A14]/80 text-center"
           style={{ padding: "clamp(40px, 6vw, 64px) clamp(24px, 5vw, 48px)" }}
         >
           <p

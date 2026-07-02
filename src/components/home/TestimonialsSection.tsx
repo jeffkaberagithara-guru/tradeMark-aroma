@@ -57,7 +57,7 @@ const StarRating = ({ rating }: { rating: number }) => (
 
 export default function TestimonialsSection() {
   return (
-    <section className="py-20 px-4 max-w-[1200px] mx-auto">
+    <section className="py-20 px-4 max-w-300 mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -90,7 +90,7 @@ export default function TestimonialsSection() {
               <img
                 src={testimonial.image}
                 alt={testimonial.name}
-                className="w-12 h-12 rounded-full object-cover flex-shrink-0"
+                className="w-12 h-12 rounded-full object-cover shrink-0"
               />
 
               {/* Content */}
@@ -130,7 +130,7 @@ export default function TestimonialsSection() {
           )}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block px-8 py-3 rounded-full border border-[#C9A94A] text-[#C9A94A] font-body font-semibold uppercase tracking-[0.1em] text-sm hover:bg-[#C9A94A] hover:text-[#0B0B0B] transition-all duration-300"
+          className="inline-block px-8 py-3 rounded-full border border-[#C9A94A] text-[#C9A94A] font-body font-semibold uppercase tracking-widest text-sm hover:bg-[#C9A94A] hover:text-[#0B0B0B] transition-all duration-300"
         >
           Share Your Experience
         </a>

@@ -25,7 +25,7 @@ export default function NewsletterSignup() {
   };
 
   return (
-    <section className="py-16 px-4 max-w-[1200px] mx-auto">
+    <section className="py-16 px-4 max-w-300 mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}

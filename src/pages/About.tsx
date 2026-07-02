@@ -81,7 +81,7 @@ const milestones = [
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-[#0B0B0B] text-[#F4EADE] pt-[72px]">
+    <div className="min-h-screen bg-[#0B0B0B] text-[#F4EADE] pt-18">
       {/* Hero Section */}
       <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden">
         {/* Video Background */}
@@ -106,8 +106,8 @@ export default function About() {
               className="w-full h-full object-cover"
             />
           </video>
-          <div className="absolute inset-0 bg-gradient-to-b from-[rgba(11,11,11,0.2)] via-[rgba(11,11,11,0.5)] via-60% to-[rgba(11,11,11,0.95)]" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[rgba(11,11,11,0.9)] via-transparent to-[rgba(11,11,11,0.1)]" />
+          <div className="absolute inset-0 bg-linear-to-b from-[rgba(11,11,11,0.2)] via-[rgba(11,11,11,0.5)] via-60% to-[rgba(11,11,11,0.95)]" />
+          <div className="absolute inset-0 bg-linear-to-t from-[rgba(11,11,11,0.9)] via-transparent to-[rgba(11,11,11,0.1)]" />
         </div>
 
         {/* Content */}
@@ -146,7 +146,7 @@ export default function About() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 px-4 max-w-[1200px] mx-auto -mt-8 relative z-10">
+      <section className="py-16 px-4 max-w-300 mx-auto -mt-8 relative z-10">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {stats.map((stat, index) => {
             const Icon = stat.icon;
@@ -177,7 +177,7 @@ export default function About() {
       </section>
 
       {/* Values Section */}
-      <section className="py-16 px-4 max-w-[1200px] mx-auto">
+      <section className="py-16 px-4 max-w-300 mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -208,7 +208,7 @@ export default function About() {
                 className="bg-[#1C1A14] rounded-xl border border-[#2A2519] p-6 hover:border-[#C9A94A] transition-colors duration-300"
               >
                 <div className="flex items-start gap-4">
-                  <div className="p-2 rounded-full bg-[#C9A94A]/10 text-[#C9A94A] flex-shrink-0">
+                  <div className="p-2 rounded-full bg-[#C9A94A]/10 text-[#C9A94A] shrink-0">
                     <Icon size={22} />
                   </div>
                   <div>
@@ -227,7 +227,7 @@ export default function About() {
       </section>
 
       {/* Milestones Section */}
-      <section className="py-16 px-4 max-w-[1200px] mx-auto">
+      <section className="py-16 px-4 max-w-300 mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -295,7 +295,7 @@ export default function About() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 px-4 max-w-[1200px] mx-auto">
+      <section className="py-16 px-4 max-w-300 mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

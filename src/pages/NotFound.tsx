@@ -4,7 +4,7 @@ import { Home, ArrowLeft } from "lucide-react";
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen bg-[#0B0B0B] text-[#F4EADE] flex items-center justify-center px-4 pt-[72px]">
+    <div className="min-h-screen bg-[#0B0B0B] text-[#F4EADE] flex items-center justify-center px-4 pt-18">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -13,7 +13,7 @@ export default function NotFound() {
       >
         {/* 404 Number */}
         <div className="relative mb-8">
-          <span className="font-heading text-[120px] sm:text-[160px] font-bold bg-gradient-to-r from-[#C9A94A] via-[#E8D5A3] to-[#C9A94A] bg-clip-text text-transparent leading-none">
+          <span className="font-heading text-[120px] sm:text-[160px] font-bold bg-linear-to-r from-[#C9A94A] via-[#E8D5A3] to-[#C9A94A] bg-clip-text text-transparent leading-none">
             404
           </span>
           <div className="absolute inset-0 flex items-center justify-center">

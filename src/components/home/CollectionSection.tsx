@@ -88,11 +88,11 @@ function FragranceCard({
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
       whileHover={{ y: -6 }}
-      className="bg-[#1C1A14] border border-[#2A2519] hover:border-[#C9A94A] rounded-[16px] overflow-hidden flex flex-col cursor-default transition-colors duration-300"
+      className="bg-[#1C1A14] border border-[#2A2519] hover:border-[#C9A94A] rounded-2xl overflow-hidden flex flex-col cursor-default transition-colors duration-300"
     >
       {/* Image */}
       <div
-        className="relative overflow-hidden flex-shrink-0"
+        className="relative overflow-hidden shrink-0"
         style={{ height: "clamp(200px, 28vw, 260px)" }}
       >
         <motion.img
@@ -133,7 +133,7 @@ function FragranceCard({
           {fragrance.description}
         </p>
 
-        <div className="h-px bg-[#2A2519] flex-shrink-0" />
+        <div className="h-px bg-[#2A2519] shrink-0" />
 
         <p
           className="font-semibold uppercase text-[#6B5A2E] m-0"
@@ -183,7 +183,7 @@ export default function CollectionSection() {
   return (
     <section
       id="collection"
-      className="w-full max-w-[1200px] mx-auto"
+      className="w-full max-w-300 mx-auto"
       style={{ padding: "clamp(60px, 10vw, 100px) clamp(16px, 4vw, 24px)" }}
     >
       <motion.div
@@ -238,7 +238,7 @@ export default function CollectionSection() {
           href="/fragrances"
           whileHover={{ scale: 1.04 }}
           whileTap={{ scale: 0.97 }}
-          className="inline-flex rounded-[32px] border border-[#C9A94A] bg-transparent text-[#C9A94A] font-semibold uppercase no-underline"
+          className="inline-flex rounded-4xl border border-[#C9A94A] bg-transparent text-[#C9A94A] font-semibold uppercase no-underline"
           style={{
             padding: "clamp(12px, 1.8vw, 16px) clamp(28px, 4vw, 40px)",
             fontSize: "clamp(12px, 1.5vw, 14px)",

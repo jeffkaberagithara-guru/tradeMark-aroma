@@ -150,7 +150,7 @@ const ProductCard = ({
 
 export default function BestSellersSection() {
   return (
-    <section className="py-20 px-4 max-w-[1200px] mx-auto">
+    <section className="py-20 px-4 max-w-300 mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -184,7 +184,7 @@ export default function BestSellersSection() {
       >
         <Link
           to="/fragrances"
-          className="inline-block px-8 py-3 rounded-full border-2 border-[#C9A94A] text-[#C9A94A] font-body font-semibold uppercase tracking-[0.1em] text-sm hover:bg-[#C9A94A] hover:text-[#0B0B0B] transition-all duration-300"
+          className="inline-block px-8 py-3 rounded-full border-2 border-[#C9A94A] text-[#C9A94A] font-body font-semibold uppercase tracking-widest text-sm hover:bg-[#C9A94A] hover:text-[#0B0B0B] transition-all duration-300"
         >
           View All Fragrances
         </Link>
